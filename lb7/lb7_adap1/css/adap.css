@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.single {
+    width: 90%;
+    max-width: 1200px;
+    min-width: 0;
+    margin: 0 auto 20px auto;
+}
+
+
+/* Строки — контейнеры, ширина только у них */
+.row {
+    width: 90%;
+    max-width: 1200px;
+    min-width: 0;
+    margin: 0 auto 20px auto;
+    display: flex;
+    gap: 20px;
+}
+
+/* Блоки внутри строки */
+.row .block {
+    flex: 1;
+    margin: 0;
+}
+
+/* Общий стиль блоков */
+.block {
+    background: #ff6b6b;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+/* Шапка */
+.header {
+    width: 90%;
+    max-width: 1200px;
+    min-width: 0;
+    margin: 0 auto 20px auto;
+    background: #ff6b6b;
+    text-align: left;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Навигация */
+.fx-nav {
+    font-size: 20px;
+}
+
+.fx-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fx-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Подвал */
+.footer {
+    width: 90%;
+    max-width: 1200px;
+    min-width: 0;
+    margin: 0 auto 20px auto;
+    background: #ff6b6b;
+    padding: 10px;
+    color: white;
+}
+
+/*бургер*/
+#burger-toggle {
+    display: none;
+}
+
+/* мобильное меню */
+.mobile-nav a:hover {
+    text-decoration: underline;
+}
+
+/* бургер-кнопка */
+.burger {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+}
+
+/* popup меню */
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #ff6b6b;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: 0.25s ease;
+    z-index: 100;
+    width: 200px;
+}
+
+.mobile-nav a {
+    color: white;
+    padding: 6px 0;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.mobile-nav a:hover {
+    text-decoration: underline;
+}
+
+/* показываем popup */
+#burger-toggle:checked ~ .mobile-nav {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* планшеты */
+@media (max-width: 900px) and (min-width: 601px) {
+
+    body {
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .block {
+        font-size: 20px;
+        padding: 16px;
+    }
+
+    /* Контейнеры — уникальная ширина */
+    .row,
+    .single,
+    .header,
+    .footer {
+        width: 85%;
+        max-width: none;
+        min-width: 0;
+        margin: 0 auto 18px auto;
+    }
+
+    /* Общая сетка */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    /* Блоки 4 и 5 — по 50% */
+    #media .block {
+        flex: 1 1 calc(50% - 15px);
+    }
+
+    /* Блоки 6 и 7 — по 50% */
+    #forms .block:nth-child(1),
+    #forms .block:nth-child(2) {
+        flex: 1 1 calc(50% - 15px);
+    }
+
+    /* Блок 8 — на всю ширину */
+    #forms .block:nth-child(3) {
+        flex: 1 1 100%;
+    }
+}
+
+
+/*телефоны*/
+@media (max-width: 600px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .block {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    /* Контейнеры могут сжиматься */
+    .single,
+    .row,
+    .header,
+    .footer {
+        width: 100%;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 auto 15px auto;
+    }
+
+    /* Все блоки — 100% */
+    .block,
+    .row .block {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* скрываем обычную навигацию */
+    .fx-nav {
+        display: none;
+    }
+
+    /* показываем бургер */
+    .burger {
+        display: block;
+        margin-bottom: 10px;
+    }    
+}

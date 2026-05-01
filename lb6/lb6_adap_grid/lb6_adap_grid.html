@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adap grid</title>
+    <link rel="stylesheet" href="css\adap_grid.css">
+</head>
+
+<body>
+
+<h1>adap grid</h1>
+
+<div class="header">
+
+    <div class="header-top">
+        <div class="header-title">Шапка</div>
+
+        <!-- Бургер -->
+        <input type="checkbox" id="burger-toggle">
+        <label for="burger-toggle" class="burger">&#9776;</label>
+
+        <!-- Мобильное меню -->
+        <nav class="mobile-nav">
+            <a href="#about">О сериале</a>
+            <a href="#characters">Персонажи</a>
+            <a href="#seasons">Сезоны</a>
+            <a href="#media">Медиа</a>
+            <a href="#forms">Формы</a>
+        </nav>
+    </div>
+
+    <!-- Навигация для ПК -->
+    <nav class="fx-nav">
+        <a href="#about">О сериале</a> |
+        <a href="#characters">Персонажи</a> |
+        <a href="#seasons">Сезоны</a> |
+        <a href="#media">Медиа</a> |
+        <a href="#forms">Формы</a>
+    </nav>
+
+</div>
+
+<div class="block single" id="about">Блок 1 — О сериале</div>
+
+<div class="block single" id="characters">Блок 2 — Персонажи</div>
+
+<div class="block single" id="seasons">Блок 3 — Сезоны</div>
+
+<div class="row split-row" id="media">
+    <div class="block">Блок 4 — Трейлер</div>
+    <div class="block">Блок 5 — Музыка</div>
+</div>
+
+<div class="row" id="forms">
+    <div class="block">Блок 6 — Регистрация</div>
+    <div class="block">Блок 7 — Авторизация</div>
+    <div class="block">Блок 8 — Опрос</div>
+</div>
+
+<div class="block footer">Подвал</div>
+
+</body>
+</html>
