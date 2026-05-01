@@ -1,0 +1,171 @@
+
+/* Подключение шрифтов */
+/*для заголовков*/
+@font-face {
+    font-family: "Oswald";
+    src: url("../font/Oswald.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+/*основной*/
+@font-face {
+    font-family: "RobotoCondensed";
+    src: url("../font/RobotoCondensed-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+/* применяем шрифты */
+body {
+    font-family: "RobotoCondensed", Arial, sans-serif; /* основной шрифт */
+    background: linear-gradient(135deg, #641515, #444c4e); /* градиентный фон */
+    color: #bebebe;/* цвет текста */
+    margin: 0;
+    padding: 0;
+}
+/* заголовки */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald", sans-serif;
+}
+/*текст и оформление*/
+h1 {
+    font-size: 3rem;/* крупный заголовок */
+    margin-bottom: calc(10px + 1vw);/* адаптивный нижний отступ */
+    margin-left: 10px;/* лёгкое смещение */
+    margin-top: 5px;/* уменьшенный верхний отступ */
+}
+
+h2 {
+    border-bottom: 2px solid #ff4444; /* подчёркивание */
+    padding-bottom: .3rem;
+}
+
+/*увеличенная первая буква абзаца*/
+p::first-letter {
+    font-size: 150%;
+    color: #ff4444;
+    margin-left: 10px;
+}
+
+/*выделение важных слов*/
+.highlight {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+/*отступ между заголовком и следующим абзацем*/
+h2 + p {
+    margin-top: .5rem;
+}
+
+/*навигация*/
+nav a {
+    color: #eee;
+    text-decoration: none;
+    margin: 0 .3rem;/* расстояние между ссылками */
+    transition: .2s;/* плавный hover */
+    margin-left: 10px; /* лёгкое смещение */
+}
+
+nav a:hover {
+    color: #ff4444;
+    text-decoration: underline;
+}
+
+/*секции*/ 
+main > section {
+    margin-bottom: 2rem;/* расстояние между секциями */
+    padding: 1rem;
+    background: rgba(29, 0, 0, 0.3);/* полупрозрачный фон */
+    border-radius: 10px;
+}
+
+/* Постер сериала */
+.poster {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(190, 25, 25);
+}
+
+/* Фото персонажей */
+.char-img {
+    width: 200px;
+    max-width: 100%;
+    border-radius: 15px;
+    border: 2px solid #ac3333;
+    box-shadow: 0 0 10px black;
+}
+/*списки*/
+.characters-list {
+    list-style: none; /* убираем стандартные маркеры */
+    padding: 0;
+}
+
+.characters-list li {
+    padding-left: 30px;/* место под иконку */
+    position: relative;
+}
+
+/* Капля крови как маркер */
+.characters-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 18px;
+    height: 18px;
+    background: url("../icon/blood-drop.png") no-repeat center/cover;
+}
+/*таблицы*/
+table {
+    width: 100%;
+    border-collapse: collapse;/* убираем двойные границы */
+}
+
+th {
+    background: #400;
+    color: white;
+}
+
+td, th {
+    border: 1px solid #555;
+    padding: 10px;
+}
+/*формы и кнопки*/
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    background: #111;
+    color: #eee;
+    padding: .5rem;
+    border-radius: 5px;
+    width: 300px;
+    border: 1px solid #555;
+}
+/*кнопки*/
+button {
+    background: linear-gradient(135deg, #ff4444, #aa0000);
+    border: none;
+    padding: .3rem 1rem;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.05);/* лёгкое увеличение */
+}
+/*анимация*/
+/*заголовок*/
+.animated-title {
+    animation: glow 3s infinite;
+}
+/*эффект свечения*/
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #ff4444; }
+    50% { text-shadow: 0 0 20px #da3a3a; }
+    100% { text-shadow: 0 0 5px #b83333; }
+}
