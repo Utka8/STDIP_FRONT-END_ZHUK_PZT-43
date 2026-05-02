@@ -1,0 +1,110 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Контейнеры — резиновые */
+.single,
+.row,
+.header,
+.footer {
+    width: 90%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto 20px auto;
+}
+
+/* Резиновая строка */
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-gap: 20px;
+
+    align-content: stretch;
+    justify-content: stretch;
+    place-content: stretch stretch;
+
+    align-items: stretch;
+    justify-items: stretch;
+    place-items: stretch;
+
+    grid-auto-rows: minmax(80px, auto);
+    grid-auto-flow: row;
+}
+
+/* Блоки */
+.row .block {
+    margin: 0;
+    grid-row: auto;
+    grid-column: auto;
+}
+
+/* Строка с 2 блоками */
+.split-row {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+}
+
+/* Общий вид блоков */
+.block {
+    background: #ff6b6b;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 6px;
+}
+
+/* Шапка */
+.header {
+    background: #ff6b6b;
+    text-align: left;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Навигация */
+.fx-nav {
+    font-size: 20px;
+}
+
+.fx-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fx-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Подвал */
+.footer {
+    background: #ff6b6b;
+    padding: 10px;
+    color: white;
+}
+
+/* Бургер — скрыт */
+#burger-toggle,
+.burger,
+.mobile-nav {
+    display: none;
+}

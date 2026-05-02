@@ -1,0 +1,92 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* фиксированные контейнеры */
+.single,
+.row,
+.header,
+.footer {
+    width: 1200px;
+    margin: 0 auto 20px auto;
+}
+
+/* фиксированная сетка 3 колонки */
+.row {
+    display: grid;
+    grid-template-columns: 387px 387px 387px;
+    grid-gap: 20px;
+
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+/* Строка с 2 блоками — но ширина та же */
+.split-row {
+    grid-template-columns: 590px 590px;
+}
+
+/* Блоки */
+.block {
+    background: #ff6b6b;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 6px;
+}
+
+/* Шапка */
+.header {
+    background: #ff6b6b;
+    text-align: left;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Навигация */
+.fx-nav {
+    font-size: 20px;
+}
+
+.fx-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fx-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Подвал */
+.footer {
+    background: #ff6b6b;
+    padding: 10px;
+    color: white;
+}
+
+/* Бургер — скрыт */
+#burger-toggle,
+.burger,
+.mobile-nav {
+    display: none;
+}
