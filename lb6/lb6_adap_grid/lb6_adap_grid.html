@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adap grid</title>
-    <link rel="stylesheet" href="css\adap_grid.css">
+    <link rel="stylesheet" href="css/adap_grid.css">
 </head>
 
 <body>
@@ -41,15 +41,36 @@
 
 </div>
 
-<div class="block single" id="about">Блок 1 — О сериале</div>
+<div class="block single" id="about">
+    <h2>О сериале</h2>
+    <p><span class="highlight">«Декстер»</span> — американский криминальный сериал, рассказывающий историю
+        Декстера Моргана — эксперта по анализу крови в полиции Майами, который тайно является серийным убийцей,
+        следуя строгому «Кодексу Гарри».</p>
+        <!-- Постер сериала -->
+    <img src="image/dexter.jpg" alt="Постер сериала Декстер" class="poster">
+    <p>Подробнее можно узнать на
+        <a href="https://www.imdb.com/title/tt0773262/" target="_blank">странице сериала IMDb</a>.
+    </p>
+</div>
 
 <div class="block single" id="characters">Блок 2 — Персонажи</div>
 
 <div class="block single" id="seasons">Блок 3 — Сезоны</div>
 
 <div class="row split-row" id="media">
-    <div class="block">Блок 4 — Трейлер</div>
-    <div class="block">Блок 5 — Музыка</div>
+    <div class="block">
+        <h3>Трейлер сериала</h3>
+        <video class="video-player" controls>
+            <source src="video/TrailerOfTheSeriesDexter.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="block">
+        <h3>Музыка из сериала</h3>
+        <p><strong>1. DanielLicht (OST Dexter) — Astor's Birthday Party</strong></p>
+        <audio controls>
+            <source src="audio/astors_birthday_party.mp3" type="audio/mp3">
+        </audio>
+    </div>
 </div>
 
 <div class="row" id="forms">

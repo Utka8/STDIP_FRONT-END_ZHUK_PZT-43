@@ -46,8 +46,7 @@ h1 {
 
 /* Блоки внутри строки */
 .row .block {
-   margin: 0;
-
+    margin: 0;
     /* пример использования grid-row/grid-column (но без изменения визуала) */
     grid-row: auto;
     grid-column: auto;
@@ -257,8 +256,47 @@ h1 {
     }   
 }
 
+/*адаптивные шрифты*/
+h1 {
+    font-size: clamp(22px, 4vw, 36px);
+}
 
-/* мобильное меню 
-.mobile-nav a:hover {
-    text-decoration: underline;
-}*/
+h2, h3 {
+    font-size: clamp(20px, 3.5vw, 30px);
+}
+
+p, a, li {
+    font-size: clamp(14px, 2.5vw, 22px);
+}
+
+.block {
+    font-size: clamp(16px, 2.8vw, 24px);
+    padding: clamp(10px, 3vw, 20px);
+}
+
+/*адаптация медии*/
+img, video {
+    max-width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+audio {
+    width: 100%;
+}
+
+.poster {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.video-player {
+    width: 100%;
+    max-width: 400px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
