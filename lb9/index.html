@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Способы внедрения JS</title>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        // Способ №2: Внутренний скрипт в head выводит текст в самом начале загрузки страницы
+        document.write("<p>Способ №2: Отработал внутренний скрипт из тега head.</p>");
+    </script>
+</head>
+
+<body>
+
+    <button onclick="alert('Способ №3'); document.write('<p>Способ №3: Этот текст заменил страницу после клика на кнопку.</p>');">
+        Нажми на меня
+    </button>
+
+    <br><br>
+
+    <a href="javascript:alert('Выполнено через href!'); document.write('<p>Способ №4: Этот текст заменил страницу после клика по ссылке.</p>');">
+        Ссылка-скрипт
+    </a>
+
+    <script>
+        window.alert("Приветствуем!");
+
+        let clientProfile = window.prompt("Введите тип вашей учетной записи (например: Администратор, Редактор, Гость):", "Гость");
+
+        if (clientProfile === null || clientProfile.trim() === "") {
+            clientProfile = "Анонимный пользователь";
+        }
+
+        let accessPermission = window.confirm(`Вы вошли под профилем "${clientProfile}"`);
+
+        // Вывод результатов работы диалоговых окон через document.write в текущее место страницы
+        if (accessPermission) {
+            document.write(`<p>Диалоговое окно: Успешно! Вы вошли под профилем: <u>${clientProfile}</u>.</p>`);
+        }
+        else {
+            document.write("<p>>Диалоговое окно: Действие отменено пользователем. Загрузка прервана.</p>");
+        }
+    </script>
+
+</body>
+</html>

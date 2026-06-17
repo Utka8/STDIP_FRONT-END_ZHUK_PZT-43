@@ -1,0 +1,178 @@
+/* ВНЕШНЯЯ МИКРОСЕТКА */
+.microgrids-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    align-items: start;
+}
+
+/* МИКРОСЕТКА №1 — заказ */
+.order-custom {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    width: 360px;
+    overflow: hidden;
+}
+
+.order-custom__header {
+    background: #e3a362; /* Оранжевый заголовок */
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-custom__body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-custom__item {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+.order-custom__item input,
+.order-custom__item select {
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.order-custom__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: #333; /* Основной текст черный/темно-серый */
+    cursor: pointer;
+}
+
+.order-custom__checkbox input {
+    margin-top: 2px; /* Выравнивание чекбокса по первой строке текста */
+}
+
+.order-custom__link {
+    color: #e3a362;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.order-custom__link:hover {
+    text-decoration: underline; /* Подчеркивание при наведении для удобства */
+}
+
+.order-custom__checkbox a {
+    color: #e3a362;
+    text-decoration: none;
+}
+
+.order-custom__btn {
+    background: #e3a362; /* Оранжевая кнопка */
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* МИКРОСЕТКА №2 — Карточка корги */
+
+.product-card__header {
+    display: flex;
+    align-items: center; /* Центрирует иконку и текст по вертикали */
+    gap: 8px; /* Расстояние между иконкой и текстом */
+    margin-bottom: 10px;
+}
+
+.product-card__icon {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card {
+    width: 200px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    font-family: sans-serif;
+}
+
+.product-card__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.product-card__status {
+    background: #e0d0ff;
+    color: #4b0082;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.product-card__title {
+    font-size: 12px;
+    margin: 0 0 5px 0;
+    color: #d2691e;
+}
+
+.product-card__details{
+    font-size: 12px;
+    margin: 0 0 0px 0;
+    color: #828282;
+}
+
+.product-card__price-row {
+    margin: 10px 0;
+}
+
+.product-card__current-price {
+    font-weight: 600;
+    font-size: 12px;
+    color: #d2691e;
+}
+
+.product-card__old-price {
+    font-size: 12px;
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 5px;
+}
+
+.product-card__tags {
+    display: flex;
+    gap: 5px;
+}
+
+.tag-discount {
+    background: #fffacd;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #d2691e;
+}
+
+.tag-points {
+    background: #e0e0ff;
+    padding: 3px 6px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #6c55ff;
+}

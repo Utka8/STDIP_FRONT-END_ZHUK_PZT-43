@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР8 — Микросетки</title>
+    <link rel="stylesheet" href="css/lab8.css">
+</head>
+
+<body>
+
+<div class="site-grid">
+
+   <br></br>
+
+    <!-- Две микросетки -->
+    <div class="microgrids-row">
+
+        <div class="order-custom">
+            <div class="order-custom__header">
+                Заказать <span>✕</span>
+            </div>
+
+            <form class="order-custom__body">
+                <div class="order-custom__item">
+                    Блендер
+                    <span style="font-weight: normal;">Стоимость: 1 000 ₽</span>
+                </div>
+
+                <label class="order-custom__item">
+                    Цвет
+                    <select>
+                        <option>Красный</option>
+                        <option>Оранжевый</option>
+                        <option>Синий</option>
+                        <option>Фиолетовый</option>
+                        <option>Голубой</option>
+                        <option>Розовый</option>
+                        <option>Зеленый</option>
+                    </select>
+                </label>
+
+                <label class="order-custom__item">
+                    Ваше Имя
+                    <input type="text" placeholder="Ваше Имя">
+                </label>
+
+                <label class="order-custom__item">
+                    Email *
+                    <input type="email" placeholder="Email *">
+                </label>
+
+                <label class="order-custom__item">
+                    Телефон *
+                    <input type="tel" placeholder="Телефон *">
+                </label>
+
+                <label class="order-custom__checkbox">
+                    <input type="checkbox" required>
+                    <span>
+                        Я принимаю условия 
+                        <a href="#" class="order-custom__link">политики обработки персональных данных</a>
+                    </span>
+                </label>
+
+                <button type="submit" class="order-custom__btn">Оформить заявку</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <div class="product-card__header">
+                <img src="image/corgi.png" class="product-card__icon" alt="Иконка">
+            </div>
+            
+            <div class="product-card__body">
+                <div class="product-card__status">Скоро закончится</div>
+                <h3 class="product-card__title">Подарочный набор "Корги"</h3>
+                <p class="product-card__details">330 мл, OZ</p>
+                
+                <div class="product-card__price-row">
+                    <span class="product-card__current-price">18,80 руб.</span>
+                    <span class="product-card__old-price">19,79 руб.</span>
+                </div>
+                
+                <div class="product-card__tags">
+                    <span class="tag-discount">-5%</span>
+                    <span class="tag-points">💎 0,19</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
