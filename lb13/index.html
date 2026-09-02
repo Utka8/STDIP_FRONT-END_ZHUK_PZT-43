@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №13 - BOM в JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Лабораторная работа №13: Объектная модель браузера (BOM)</h1>
+    <p>Интерактивный сборник примеров для объектов: <strong>window, location, navigator, history, screen</strong>.</p>
+
+    <!-- Объект WINDOW -->
+    <div class="section">
+        <h2>1. Объект Window</h2>
+        
+        <div class="example-box">
+            <h3>Таймеры (setTimeout / setInterval)</h3>
+            <p>Прошло времени на странице: <span id="timer-counter">0</span> сек.</p>
+            <button onclick="startAlertTimer()">Запустить алерт через 3 сек</button>
+        </div>
+
+        <div class="example-box">
+            <h3>Межоконное взаимодействие (открытие/закрытие дочернего окна)</h3>
+            <button onclick="openChildWindow()">Открыть дочернее окно</button>
+            <button onclick="closeChildWindow()">Закрыть дочернее окно</button>
+        </div>
+
+        <div class="example-box">
+            <h3>Диалоговые окна и размер экрана через window</h3>
+            <button onclick="showPromptDialog()">Запросить имя (prompt)</button>
+            <p id="greeting-output"></p>
+        </div>
+    </div>
+
+    <!-- Объект LOCATION -->
+    <div class="section">
+        <h2>2. Объект Location</h2>
+
+        <div class="example-box">
+            <h3>Информация о текущем URL</h3>
+            <button onclick="showLocationInfo()">Показать свойства location</button>
+            <pre id="location-info-output">Нажмите кнопку...</pre>
+        </div>
+
+        <div class="example-box">
+            <h3>Редирект (перенаправление)</h3>
+            <button onclick="redirectToSite('https://github.com')">Перейти на GitHub</button>
+        </div>
+
+        <div class="example-box">
+            <h3>Работа с GET-параметрами (Имитация фильтра каталога)</h3>
+            <input type="text" id="filter-input" placeholder="Введите категорию (например: laptops)">
+            <button onclick="applyUrlFilter()">Применить фильтр в URL</button>
+            <p id="url-params-output"></p>
+        </div>
+    </div>
+
+    <!-- Объект NAVIGATOR -->
+    <div class="section">
+        <h2>3. Объект Navigator</h2>
+
+        <div class="example-box">
+            <h3>Информация о системе и браузере</h3>
+            <button onclick="showNavigatorInfo()">Собрать данные navigator</button>
+            <pre id="navigator-output">Нажмите кнопку...</pre>
+        </div>
+
+        <div class="example-box">
+            <h3>Проверка сети (Online / Offline)</h3>
+            <p>Статус соединения: <span id="network-status" class="status-bold"></span></p>
+        </div>
+
+        <div class="example-box">
+            <h3></h3>Определение геолокации (если разрешено)</h3>
+            <button onclick="getGeoLocation()">Узнать координаты</button>
+            <p id="geo-output"></p>
+        </div>
+    </div>
+
+    <!-- Объект HISTORY -->
+    <div class="section">
+        <h2>4. Объект History</h2>
+
+        <div class="example-box">
+            <h3>Управление историей браузера</h3>
+            <p>Количество записей в сессии истории: <span id="history-length"></span></p>
+            <button onclick="window.history.back()">Назад (history.back)</button>
+            <button onclick="window.history.forward()">Вперед (history.forward)</button>
+            <button onclick="window.history.go(-1)">Шаг назад (history.go(-1))</button>
+        </div>
+    </div>
+
+    <!-- Объект SCREEN -->
+    <div class="section">
+        <h2>5. Объект Screen</h2>
+
+        <div class="example-box">
+            <h3>Дашборд параметров экрана и типа устройства</h3>
+            <button onclick="showScreenDashboard()">Показать параметры экрана</button>
+            <pre id="screen-output">Нажмите кнопку...</pre>
+            <div id="device-type-alert" class="device-alert"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
