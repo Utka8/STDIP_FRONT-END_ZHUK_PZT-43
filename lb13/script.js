@@ -15,7 +15,9 @@ function startAlertTimer() {
 let winChild = null;
 function openChildWindow() {
     winChild = window.open('', '_blank', 'width=400,height=300');
-    winChild.document.write('<h3>Дочернее окно BOM</h3><p>Привет из главного окна!</p>');
+    if (winChild) {
+        winChild.document.write('<h3>Дочернее окно BOM</h3><p>Привет из главного окна!</p>');
+    }
 }
 function closeChildWindow() {
     if (winChild && !winChild.closed) {
@@ -62,7 +64,8 @@ function checkUrlParams() {
     const params = new URLSearchParams(window.location.search);
     const category = params.get('category');
     if (category) {
-        document.getElementById('url-params-output').textContent = `Активный фильтр из URL: ${category}`;
+        const outputElem = document.getElementById('url-params-output');
+        if (outputElem) outputElem.textContent = `Активный фильтр из URL: ${category}`;
     }
 }
 window.onload = checkUrlParams;
@@ -81,12 +84,14 @@ userAgent: ${navigator.userAgent}
 
 function updateNetworkStatus() {
     const statusElem = document.getElementById('network-status');
-    if (navigator.onLine) {
-        statusElem.textContent = 'Онлайн (Интернет есть)';
-        statusElem.style.color = 'green';
-    } else {
-        statusElem.textContent = 'Офлайн (Нет сети)';
-        statusElem.style.color = 'red';
+    if (statusElem) {
+        if (navigator.onLine) {
+            statusElem.textContent = 'Онлайн (Интернет есть)';
+            statusElem.style.color = 'green';
+        } else {
+            statusElem.textContent = 'Офлайн (Нет сети)';
+            statusElem.style.color = 'red';
+        }
     }
 }
 window.addEventListener('online', updateNetworkStatus);
@@ -110,7 +115,21 @@ function getGeoLocation() {
 }
 
 // --- HISTORY ---
-document.getElementById('history-length').textContent = window.history.length;
+const historyLengthElem = document.getElementById('history-length');
+if (historyLengthElem) {
+    historyLengthElem.textContent = window.history.length;
+}
+
+function addNewHistoryState() {
+    window.history.pushState({page: 2}, "Новое состояние", "?state=new");
+    const stateOutput = document.getElementById('history-state-output');
+    if (stateOutput) {
+        stateOutput.textContent = "Текущее состояние: добавлено через pushState";
+    }
+    if (historyLengthElem) {
+        historyLengthElem.textContent = window.history.length;
+    }
+}
 
 // --- SCREEN ---
 function showScreenDashboard() {
@@ -121,19 +140,6 @@ colorDepth: ${window.screen.colorDepth} бит
 pixelDepth: ${window.screen.pixelDepth} бит
     `.trim();
     document.getElementById('screen-output').textContent = info;
-
-    let width = window.screen.width;
-    let deviceAlert = document.getElementById('device-type-alert');
-    if (width < 768) {
-        deviceAlert.textContent = 'Тип устройства: Мобильный телефон / Смартфон';
-        deviceAlert.style.color = '#e74c3c';
-    } else if (width < 1024) {
-        deviceAlert.textContent = 'Тип устройства: Планшет';
-        deviceAlert.style.color = '#e67e22';
-    } else {
-        deviceAlert.textContent = 'Тип устройства: Настольный ПК (Desktop)';
-        deviceAlert.style.color = '#27ae60';
-    }
 }
 
 function compareScreenAreas() {
@@ -149,4 +155,21 @@ function compareScreenAreas() {
     `;
     
     document.getElementById('screen-avail-output').innerHTML = output;
+}
+
+function detectDeviceType() {
+    let width = window.screen.width;
+    let deviceAlert = document.getElementById('device-type-alert');
+    if (!deviceAlert) return;
+
+    if (width < 768) {
+        deviceAlert.textContent = 'Тип устройства: Мобильный телефон / Смартфон';
+        deviceAlert.style.color = '#e74c3c';
+    } else if (width < 1024) {
+        deviceAlert.textContent = 'Тип устройства: Планшет';
+        deviceAlert.style.color = '#e67e22';
+    } else {
+        deviceAlert.textContent = 'Тип устройства: Настольный ПК (Desktop)';
+        deviceAlert.style.color = '#27ae60';
+    }
 }
