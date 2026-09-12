@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №14 - DOM в JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Лабораторная работа №14: Объектная модель документа (DOM)</h1>
+    <p>Интерактивный стенд для изучения свойств document, поиска элементов, навигации по узлам и управления стилями.</p>
+
+    <!-- 1. Свойства объекта document и коллекции -->
+    <div class="section" id="section-doc">
+        <h2>1. Свойства объекта document и коллекции</h2>
+        <div class="example-box">
+            <button onclick="showDocumentInfo()">Показать свойства document</button>
+            <pre id="doc-info-output">Нажмите кнопку...</pre>
+            <div class="test-collection">
+                <div><a href="https://google.com" target="_blank">Пример ссылки 1</a></div>
+                <div><a href="https://github.com" target="_blank">Пример ссылки 2</a></div>
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'></svg>" alt="Тестовая картинка" style="display:none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Поиск элементов -->
+    <div class="section" id="section-search">
+        <h2>2. Поиск элементов (getElementById, querySelector)</h2>
+        <div class="example-box">
+            <p id="target-text">Этот текст будет изменен через поиск по ID.</p>
+            <input type="text" id="custom-text-input" placeholder="Введите новый текст...">
+            <button onclick="changeTextById()">Изменить текст (getElementById)</button>
+            <br><br>
+            <button onclick="highlightByQuerySelector()">Выделить элементы (.highlight-target)</button>
+            <p class="highlight-target">Элемент 1 для querySelectorAll</p>
+            <p class="highlight-target">Элемент 2 для querySelectorAll</p>
+        </div>
+    </div>
+
+    <!-- 3. Навигация по DOM (Node и отношения) -->
+    <div class="section" id="section-nav">
+        <h2>3. Навигация по DOM (Parent, Child, Sibling)</h2>
+        <div class="example-box">
+            <ul id="nav-list">
+                <li>Первый элемент</li>
+                <li id="middle-item">Центральный элемент (цель)</li>
+                <li>Третий элемент</li>
+            </ul>
+            <button onclick="navigateDOM()">Показать связи узла</button>
+            <p id="nav-output"></p>
+        </div>
+    </div>
+
+    <!-- 4. Создание, добавление и удаление элементов -->
+    <div class="section" id="section-crud">
+        <h2>4. Управление элементами (Создание, Добавление, Удаление)</h2>
+        <div class="example-box">
+            <input type="text" id="task-input" placeholder="Текст нового блока...">
+            <button onclick="addNewElement()">Добавить блок</button>
+            <button onclick="removeLastElement()">Удалить последний</button>
+            <div id="elements-container" class="elements-container">
+                <!-- Сюда будут добавляться новые элементы -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Управление стилями и атрибутами -->
+<div class="section" id="section-style">
+        <h2>5. Управление стилями и атрибутами (Объект Style)</h2>
+        <div class="example-box">
+            <div id="styled-box" class="box-to-style">Настроечный блок</div>
+            <button onclick="changeBoxColor('#e74c3c')">Красный</button>
+            <button onclick="changeBoxColor('#2ecc71')">Зеленый</button>
+            <button onclick="toggleBoxBorder()">Переключить рамку</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
