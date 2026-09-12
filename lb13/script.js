@@ -135,3 +135,18 @@ pixelDepth: ${window.screen.pixelDepth} бит
         deviceAlert.style.color = '#27ae60';
     }
 }
+
+function compareScreenAreas() {
+    const fullWidth = window.screen.width;
+    const fullHeight = window.screen.height;
+    const availWidth = window.screen.availWidth;
+    const availHeight = window.screen.availHeight;
+
+    const output = `
+        <strong>Полный размер экрана:</strong> ${fullWidth} × ${fullHeight} px<br>
+        <strong>Рабочая область (без панели задач):</strong> ${availWidth} × ${availHeight} px<br>
+        <strong>Разница (высота панели задач):</strong> ${fullHeight - availHeight} px
+    `;
+    
+    document.getElementById('screen-avail-output').innerHTML = output;
+}
