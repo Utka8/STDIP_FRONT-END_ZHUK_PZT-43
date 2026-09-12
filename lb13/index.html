@@ -84,11 +84,22 @@
         <h2>4. Объект History</h2>
 
         <div class="example-box">
-            <h3>Управление историей браузера</h3>
-            <p>Количество записей в сессии истории: <span id="history-length"></span></p>
-            <button onclick="window.history.back()">Назад (history.back)</button>
-            <button onclick="window.history.forward()">Вперед (history.forward)</button>
-            <button onclick="window.history.go(-1)">Шаг назад (history.go(-1))</button>
+            <h3>Пример 1: Базовая навигация (Назад / Вперед)</h3>
+            <p>Количество записей в истории: <span id="history-length"></span></p>
+            <button onclick="window.history.back()">Назад (back)</button>
+            <button onclick="window.history.forward()">Вперед (forward)</button>
+        </div>
+
+        <div class="example-box">
+            <h3>Пример 2: Относительные переходы (history.go)</h3>
+            <button onclick="window.history.go(-1)">Шаг назад (-1)</button>
+            <button onclick="window.history.go(1)">Шаг вперед (+1)</button>
+        </div>
+
+        <div class="example-box">
+            <h3>Пример 3: Управление стеком состояний (pushState)</h3>
+            <button onclick="addNewHistoryState()">Добавить состояние в историю</button>
+            <p id="history-state-output">Текущее состояние: главное</p>
         </div>
     </div>
 
@@ -97,9 +108,20 @@
         <h2>5. Объект Screen</h2>
 
         <div class="example-box">
-            <h3>Дашборд параметров экрана и типа устройства</h3>
+            <h3>Пример 1: Дашборд характеристик экрана</h3>
             <button onclick="showScreenDashboard()">Показать параметры экрана</button>
             <pre id="screen-output">Нажмите кнопку...</pre>
+        </div>
+
+        <div class="example-box">
+            <h3>Пример 2: Сравнение полной и рабочей области</h3>
+            <button onclick="compareScreenAreas()">Сравнить Screen и Avail</button>
+            <p id="screen-avail-output"></p>
+        </div>
+
+        <div class="example-box">
+            <h3>Пример 3: Определение типа устройства (Screen + Navigator)</h3>
+            <button onclick="detectDeviceType()">Определить устройство</button>
             <div id="device-type-alert" class="device-alert"></div>
         </div>
     </div>
