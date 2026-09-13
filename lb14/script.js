@@ -1,13 +1,39 @@
 //1. Свойства объекта document и коллекции
+// --- 1. Свойства объекта document ---
 function showDocumentInfo() {
-    let info = `
-title: ${document.title}
-URL: ${document.URL}
-Количество ссылок (links): ${document.links.length}
-Количество изображений (images): ${document.images.length}
-readyState: ${document.readyState}
-    `.trim();
-    document.getElementById('doc-info-output').textContent = info;
+    const output = document.getElementById('doc-info-output');
+    
+    // Дата последнего изменения файла
+    const lastModified = document.lastModified;
+    
+    // Имитация даты создания (текущая дата и время открытия страницы)
+    const creationDate = new Date().toLocaleString();
+
+    let info = `title: ${document.title}\n`;
+    info += `URL: ${document.URL}\n`;
+    info += `Количество ссылок (links): ${document.links.length}\n`;
+    info += `Количество изображений (images): ${document.images.length}\n`;
+    info += `readyState: ${document.readyState}\n`;
+    info += `Дата создания (примерная): ${creationDate}\n`;
+    info += `Дата последнего изменения (lastModified): ${lastModified}`;
+
+    output.textContent = info;
+}
+
+// Функция для смены элементов местами
+function swapElements() {
+    const container = document.getElementById('elements-container');
+    const items = container.children;
+
+    if (items.length >= 2) {
+        const firstElement = items[0];
+        const secondElement = items[1];
+        
+        // Меняем местами первые два элемента
+        container.insertBefore(secondElement, firstElement);
+    } else {
+        alert('Нужно создать как минимум 2 элемента, чтобы менять их местами!');
+    }
 }
 
 // 2. Поиск элементов 

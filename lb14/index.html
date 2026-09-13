@@ -55,19 +55,20 @@
 
     <!-- 4. Создание, добавление и удаление элементов -->
     <div class="section" id="section-crud">
-        <h2>4. Управление элементами (Создание, Добавление, Удаление)</h2>
+        <h2>4. Управление элементами (Создание, Добавление, Удаление, Перемещение)</h2>
         <div class="example-box">
             <input type="text" id="task-input" placeholder="Текст нового блока...">
             <button onclick="addNewElement()">Добавить блок</button>
             <button onclick="removeLastElement()">Удалить последний</button>
+            <button onclick="swapElements()">Поменять местами</button>
             <div id="elements-container" class="elements-container">
-                <!-- Сюда будут добавляться новые элементы -->
+
             </div>
         </div>
     </div>
 
     <!-- 5. Управление стилями и атрибутами -->
-<div class="section" id="section-style">
+    <div class="section" id="section-style">
         <h2>5. Управление стилями и атрибутами (Объект Style)</h2>
         <div class="example-box">
             <div id="styled-box" class="box-to-style">Настроечный блок</div>
